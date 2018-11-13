@@ -53,8 +53,9 @@ var ScrollOut = (function () {
         return "-" + match[0].toLowerCase();
     }
 
-    var win = window;
-    var root = document.documentElement;
+    var hasWindow = typeof window !== "undefined";
+    var win = hasWindow && window;
+    var root = hasWindow && document.documentElement;
     /** find elements */
     function $(e, parent) {
         return !e || e.length == 0
